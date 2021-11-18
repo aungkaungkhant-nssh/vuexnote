@@ -1,0 +1,46 @@
+vuex note
+1. module,
+2. state,
+3. getters,
+4. actions,
+5. mutations
+
+1.module က ခွဲရေးပေးရတယ်
+<<<<<<<<<******************>>>>>>>>>>>>>
+
+2.state က data တွေသိမ်းတယ်
+<<<<<<<<<******************>>>>>>>>>>>>>
+
+3.getters က data တွေ ယူဖို့သုံးတယ်
+  getters ကို component မှာယူချင် ရင် 
+  computed ထဲမှာ ယူ ရတယ်
+  getters က computed နဲ့တူတယ်
+ 
+ getters:{
+        myTodos(state){
+            return state.todos;
+        }
+    },
+ eg:computed:{...mapGetters(["myTodos"])}
+<<<<<<<<<******************>>>>>>>>>>>>>
+
+4.actions က data fetch 
+  actions ကို component ထဲမှာယူချင်ရင်
+  methods ထဲမှာရေးပေးရတယ်
+  actions က methods  နဲ့တူတယ်
+
+    actions:{
+        async getTodos({commit}){
+            let res=await axios.get("api")
+           **mutation လုပ်ခြင်း**-> commit("setTodos",res.data)            
+        }
+    }
+     eg:methods:{...mapActions(["getTodos"]
+
+<<<<<<<<<******************>>>>>>>>>>>>>
+5.mutations က state ထဲက data တွေကို
+  update လုပ်တဲ့ အချိန် သုံး တယ်
+ 
+    setTodos(state,todos){
+                state.todos=todos
+        },
